@@ -35,7 +35,7 @@ const Index = () => {
           )}
         </div>
         <p className="text-xl text-gray-300 mb-8">
-          Transform healthcare data into reinforcement learning trajectories for training AI agents
+          Generate RL trajectories for training agents from healthcare data
         </p>
         <WaitlistForm />
         <ContactSection />

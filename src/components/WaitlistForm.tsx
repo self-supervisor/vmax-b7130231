@@ -46,9 +46,14 @@ const WaitlistForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="flex-grow"
+        className="flex-grow rounded-full px-6"
       />
-      <Button type="submit" disabled={isSubmitting} variant="outline">
+      <Button 
+        type="submit" 
+        disabled={isSubmitting} 
+        variant="outline"
+        className="rounded-full px-6 hover:bg-accent transition-colors duration-300"
+      >
         {isSubmitting ? "Joining..." : "Join Waitlist"}
       </Button>
     </form>

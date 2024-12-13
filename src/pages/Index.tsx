@@ -37,9 +37,16 @@ const Index = () => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
       if (!!document.fullscreenElement && isMobile) {
-        screen.orientation.lock('landscape').catch(() => {
-          // Silently fail if orientation lock is not supported
-        });
+        // Use try-catch to handle unsupported screen orientation API
+        try {
+          if (screen.orientation && typeof screen.orientation.lock === 'function') {
+            screen.orientation.lock('landscape').catch(() => {
+              // Silently fail if orientation lock is not supported
+            });
+          }
+        } catch (error) {
+          console.log('Screen orientation API not supported');
+        }
       }
     };
 
@@ -71,7 +78,7 @@ const Index = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="absolute bottom-4 right-4 bg-black/50 hover:bg-black/70 border-none text-white"
+                className="absolute bottom-4 right-4 bg-black/50 hover:bg-black/70 border-none text-white rounded-full"
                 onClick={toggleFullscreen}
               >
                 {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}

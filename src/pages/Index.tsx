@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import WaitlistForm from "@/components/WaitlistForm";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ const Index = () => {
           Experience the future of artificial intelligence with our cutting-edge technology
         </p>
         <WaitlistForm />
+        <ContactSection />
       </div>
     </div>
   );

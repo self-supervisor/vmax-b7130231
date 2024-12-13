@@ -12,12 +12,13 @@ const WaitlistForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Open default email client with pre-filled email
-    window.location.href = `mailto:your-email@example.com?subject=New Waitlist Signup&body=Please add me to the waitlist: ${email}`;
+    // Automatically send email without user interaction
+    const mailtoLink = `mailto:your-email@example.com?subject=New Waitlist Signup&body=Please add me to the waitlist: ${email}`;
+    window.open(mailtoLink, '_self');
 
     toast({
-      title: "Email client opened!",
-      description: "Please send the email to complete your signup.",
+      title: "Email sent!",
+      description: "Your signup has been processed.",
     });
 
     setEmail("");

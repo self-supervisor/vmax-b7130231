@@ -18,7 +18,7 @@ const Index = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="max-w-4xl p-8 text-center">
         <h1 className="text-5xl font-bold mb-6 text-white bg-clip-text">
-          Generate RL Trajectories from Healthcare Data
+          V_{max}
         </h1>
         <div className="relative rounded-lg overflow-hidden shadow-2xl mb-6">
           {isLoading ? (

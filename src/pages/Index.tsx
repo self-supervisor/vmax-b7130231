@@ -59,7 +59,8 @@ const Index = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-100 to-white">
       <div className="w-full max-w-4xl px-4 sm:px-8 py-8 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
-          V<sub>max</sub>
+          <span style={{ fontFamily: "'Times New Roman', serif" }}>V</span>
+          <sub style={{ fontFamily: "'Times New Roman', serif", fontSize: '0.7em', position: 'relative', bottom: '-0.1em' }}>max</sub>
         </h1>
         <div className="relative rounded-md overflow-hidden shadow-2xl mb-6">
           {isLoading ? (

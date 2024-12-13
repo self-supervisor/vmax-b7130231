@@ -1,18 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
 // When using Lovable's Supabase integration, these values are automatically injected
-declare global {
-  interface Window {
-    SUPABASE_URL: string;
-    SUPABASE_ANON_KEY: string;
-  }
-}
-
-if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
-  throw new Error('Supabase credentials not found. Please ensure Supabase integration is properly configured.');
-}
-
-const supabaseUrl = window.SUPABASE_URL;
-const supabaseAnonKey = window.SUPABASE_ANON_KEY;
+const supabaseUrl = "https://kagwhdleyzpjnqiihela.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImthZ3doZGxleXpwam5xaWloZWxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQxMDQ0NTYsImV4cCI6MjA0OTY4MDQ1Nn0._HkacOrFHofjvFCRnJjWzqFkxoZ0WH4Uj899NtP0D6I";
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);

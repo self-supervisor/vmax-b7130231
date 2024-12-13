@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import WaitlistForm from "@/components/WaitlistForm";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,7 @@ const Index = () => {
         <p className="text-xl text-gray-300 mb-8">
           Experience the future of artificial intelligence with our cutting-edge technology
         </p>
+        <WaitlistForm />
       </div>
     </div>
   );

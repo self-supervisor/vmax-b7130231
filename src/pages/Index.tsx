@@ -3,10 +3,12 @@ import WaitlistForm from "@/components/WaitlistForm";
 import ContactSection from "@/components/ContactSection";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Simulate loading state
@@ -34,11 +36,16 @@ const Index = () => {
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
+      if (!!document.fullscreenElement && isMobile) {
+        screen.orientation.lock('landscape').catch(() => {
+          // Silently fail if orientation lock is not supported
+        });
+      }
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
@@ -50,7 +57,7 @@ const Index = () => {
           {isLoading ? (
             <div className="w-full h-[300px] sm:h-[400px] bg-gray-700 animate-pulse" />
           ) : (
-            <div className="gif-container relative">
+            <div className={`gif-container relative ${isFullscreen && isMobile ? 'rotate-90 scale-[1.8] origin-center' : ''}`}>
               <div className="aspect-video w-full">
                 <img
                   src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDd6Z2E4Y3Vzc2t1OWF4OWF4dWV4bXBxbG92amdyYmx1ZHd0YnV6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l44QiJqGqMr9eXcXu/giphy.gif"

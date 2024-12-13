@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -13,32 +12,15 @@ const WaitlistForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        {
-          to_email: 'YOUR_EMAIL@example.com', // Replace with your email
-          from_email: email,
-          message: `New waitlist signup from: ${email}`,
-        },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      );
+    // Open default email client with pre-filled email
+    window.location.href = `mailto:your-email@example.com?subject=New Waitlist Signup&body=Please add me to the waitlist: ${email}`;
 
-      toast({
-        title: "Successfully joined waitlist!",
-        description: "We'll notify you when we launch.",
-      });
+    toast({
+      title: "Email client opened!",
+      description: "Please send the email to complete your signup.",
+    });
 
-      setEmail("");
-    } catch (error) {
-      toast({
-        title: "Error joining waitlist",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
-    }
-
+    setEmail("");
     setIsSubmitting(false);
   };
 

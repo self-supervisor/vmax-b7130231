@@ -48,7 +48,7 @@ const WaitlistForm = () => {
         required
         className="flex-grow"
       />
-      <Button type="submit" disabled={isSubmitting}>
+      <Button type="submit" disabled={isSubmitting} variant="outline">
         {isSubmitting ? "Joining..." : "Join Waitlist"}
       </Button>
     </form>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -12,16 +13,32 @@ const WaitlistForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Here you would typically send this to your backend
-    // For now, we'll just simulate an API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        {
+          to_email: 'YOUR_EMAIL@example.com', // Replace with your email
+          from_email: email,
+          message: `New waitlist signup from: ${email}`,
+        },
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
 
-    toast({
-      title: "Successfully joined waitlist!",
-      description: "We'll notify you when we launch.",
-    });
+      toast({
+        title: "Successfully joined waitlist!",
+        description: "We'll notify you when we launch.",
+      });
 
-    setEmail("");
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "Error joining waitlist",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    }
+
     setIsSubmitting(false);
   };
 

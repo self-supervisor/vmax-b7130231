@@ -61,7 +61,7 @@ const Index = () => {
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
           V<sub>max</sub>
         </h1>
-        <div className="relative rounded-lg overflow-hidden shadow-2xl mb-6">
+        <div className="relative rounded-md overflow-hidden shadow-2xl mb-6">
           {isLoading ? (
             <div className="w-full h-[300px] sm:h-[400px] bg-gray-200 animate-pulse" />
           ) : (
@@ -79,7 +79,7 @@ const Index = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="absolute bottom-4 right-4 bg-black/50 hover:bg-black/70 border-none text-white rounded-full"
+                className="absolute bottom-4 right-4 bg-black/50 hover:bg-black/70 border-none text-white rounded-md"
                 onClick={toggleFullscreen}
               >
                 {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}

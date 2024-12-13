@@ -7,12 +7,12 @@ const ContactSection = () => {
     <div className="mt-8 text-center">
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" className="gap-2">
+          <Button variant="outline" className="gap-2 rounded-md">
             <Mail className="h-4 w-4" />
             Get in Touch
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="text-left">
+        <PopoverContent className="text-left rounded-md">
           <div className="space-y-2">
             <h3 className="font-medium">Contact Us</h3>
             <p className="text-sm text-muted-foreground">

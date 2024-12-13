@@ -8,6 +8,10 @@ declare global {
   }
 }
 
+if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
+  throw new Error('Supabase credentials not found. Please ensure Supabase integration is properly configured.');
+}
+
 const supabaseUrl = window.SUPABASE_URL;
 const supabaseAnonKey = window.SUPABASE_ANON_KEY;
 

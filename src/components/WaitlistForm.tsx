@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -12,17 +13,29 @@ const WaitlistForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Automatically send email without user interaction
-    const mailtoLink = `mailto:your-email@example.com?subject=New Waitlist Signup&body=Please add me to the waitlist: ${email}`;
-    window.open(mailtoLink, '_self');
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ email }]);
 
-    toast({
-      title: "Email sent!",
-      description: "Your signup has been processed.",
-    });
+      if (error) throw error;
 
-    setEmail("");
-    setIsSubmitting(false);
+      toast({
+        title: "Success!",
+        description: "You've been added to our waitlist.",
+      });
+
+      setEmail("");
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to join waitlist. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

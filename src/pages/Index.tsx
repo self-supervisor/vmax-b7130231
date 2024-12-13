@@ -88,7 +88,7 @@ const Index = () => {
           )}
         </div>
         <p className="text-lg sm:text-xl text-gray-600 mb-8">
-          Generate RL trajectories and RL agents from your companies database
+          Generate RL agents from your companies database
         </p>
         <WaitlistForm />
         <ContactSection />

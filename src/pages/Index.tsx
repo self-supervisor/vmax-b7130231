@@ -37,9 +37,10 @@ const Index = () => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
       if (!!document.fullscreenElement && isMobile) {
-        // Use try-catch to handle unsupported screen orientation API
         try {
-          if (screen.orientation && typeof screen.orientation.lock === 'function') {
+          // @ts-ignore - screen.orientation.lock is not in TypeScript's lib.dom.d.ts
+          if (screen.orientation && screen.orientation.lock) {
+            // @ts-ignore
             screen.orientation.lock('landscape').catch(() => {
               // Silently fail if orientation lock is not supported
             });
@@ -55,14 +56,14 @@ const Index = () => {
   }, [isMobile]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-100 to-white">
       <div className="w-full max-w-4xl px-4 sm:px-8 py-8 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white bg-clip-text">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
           V<sub>max</sub>
         </h1>
         <div className="relative rounded-lg overflow-hidden shadow-2xl mb-6">
           {isLoading ? (
-            <div className="w-full h-[300px] sm:h-[400px] bg-gray-700 animate-pulse" />
+            <div className="w-full h-[300px] sm:h-[400px] bg-gray-200 animate-pulse" />
           ) : (
             <div className={`gif-container relative ${isFullscreen && isMobile ? 'rotate-90 scale-[1.8] origin-center' : ''}`}>
               <div className="aspect-video w-full">
@@ -86,7 +87,7 @@ const Index = () => {
             </div>
           )}
         </div>
-        <p className="text-lg sm:text-xl text-gray-300 mb-8">
+        <p className="text-lg sm:text-xl text-gray-600 mb-8">
           Generate RL trajectories for training agents from healthcare data
         </p>
         <WaitlistForm />

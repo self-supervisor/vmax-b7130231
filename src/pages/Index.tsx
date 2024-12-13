@@ -88,7 +88,7 @@ const Index = () => {
           )}
         </div>
         <p className="text-lg sm:text-xl text-gray-600 mb-8">
-          Generate RL trajectories for training agents from healthcare data
+          Generate RL trajectories and RL agents from your companies database
         </p>
         <WaitlistForm />
         <ContactSection />

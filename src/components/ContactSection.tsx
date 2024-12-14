@@ -28,13 +28,6 @@ const ContactSection = () => {
             <p className="text-sm font-mono">
               auggy.amp [at] gmail [dot] com
             </p>
-            <a
-              href={`mailto:${constructEmail()}`}
-              className="text-sm text-blue-500 hover:underline block mt-2"
-              data-email="hidden"
-            >
-              Click to open email client
-            </a>
           </div>
         </PopoverContent>
       </Popover>

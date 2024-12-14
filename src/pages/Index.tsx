@@ -4,7 +4,6 @@ import ContactSection from "@/components/ContactSection";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -93,7 +92,7 @@ const Index = () => {
         </p>
         <div className="text-sm text-gray-500 mb-8 space-y-4 max-w-2xl mx-auto text-center">
           <p className="mb-2">AI agents need more reinforcement learning. We're tackling this by:</p>
-          <ol className="list-decimal space-y-2 inline-block text-center">
+          <ol className="list-decimal space-y-1 inline-block text-center">
             <li>Automating the extraction of RL trajectories from company data</li>
             <li>Training agents with customizable multistep rewards</li>
           </ol>

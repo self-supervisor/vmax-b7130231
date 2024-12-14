@@ -92,7 +92,7 @@ const Index = () => {
           Generate RL agents from your companies database
         </p>
         <div className="text-sm text-gray-500 mb-8 space-y-4 max-w-2xl mx-auto text-center">
-          <p className="mb-4">AI agents need more reinforcement learning. We're tackling this by:</p>
+          <p className="mb-2">AI agents need more reinforcement learning. We're tackling this by:</p>
           <ol className="list-decimal space-y-2 inline-block text-center">
             <li>Automating the extraction of RL trajectories from company data</li>
             <li>Training agents with customizable multistep reward data</li>

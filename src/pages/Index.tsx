@@ -92,11 +92,12 @@ const Index = () => {
           Generate RL agents from your companies database
         </p>
         <div className="text-sm text-gray-500 mb-8 space-y-4 max-w-2xl mx-auto">
-          <p className="mb-4">We are excited about two things that we think will enable us to build better AI agents trained with reinforcement learning:</p>
+          <p className="mb-4">We think current AI agents need more RL. To make this happen we are doing the following:</p>
           <ol className="list-decimal text-left pl-6 space-y-2">
-            <li>We are building software to automatically extract multi-step offline RL trajectories from existing company databases</li>
+            <li>Building software to automatically extract multi-step offline RL trajectories from existing company databases</li>
             <li>Training agents on multi-step reward functions that can be configured by user prompts, enabling users to build agents that can act on long time horizons with continuous feedback</li>
           </ol>
+          <p className="mt-4 text-left">If you are interested in using RL to make agents that can operate autonomously on long time horizons, sign up to our waitlist.</p>
         </div>
         <WaitlistForm />
         <ContactSection />

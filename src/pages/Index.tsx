@@ -97,7 +97,7 @@ const Index = () => {
             <li>Automating the extraction of RL trajectories from company data</li>
             <li>Training agents with customizable, multi-step reward systems - letting you build agents that think ahead and learn from feedback</li>
           </ol>
-          <p className="mt-4 text-left">Want agents that can work autonomously over long periods? Join our waitlist.</p>
+          <p className="mt-4">Want agents that can work autonomously over long periods? Join our waitlist.</p>
         </div>
         <WaitlistForm />
         <ContactSection />

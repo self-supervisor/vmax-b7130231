@@ -23,15 +23,20 @@ const ContactSection = () => {
           <div className="space-y-2">
             <h3 className="font-medium">Contact Us</h3>
             <p className="text-sm text-muted-foreground">
-              We'd love to hear from you! Reach out to us at:
+              We'd love to hear from you! Here's how to write our email:
             </p>
+            <div className="text-sm space-y-1">
+              <p>1. Start with "auggy"</p>
+              <p>2. Add a dot (.)</p>
+              <p>3. Add "amp"</p>
+              <p>4. Add "@gmail.com"</p>
+            </div>
             <a
               href={`mailto:${constructEmail()}`}
-              className="text-sm text-blue-500 hover:underline block"
+              className="text-sm text-blue-500 hover:underline block mt-2"
               data-email="hidden"
             >
-              {/* Use HTML entities and non-breaking spaces to make it harder for bots */}
-              &#97;&#117;&#103;&#103;&#121;&#46;&#97;&#109;&#112;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
+              Click to open email client
             </a>
           </div>
         </PopoverContent>

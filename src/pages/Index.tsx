@@ -69,11 +69,11 @@ const Index = () => {
             <div className={`gif-container relative ${isFullscreen && isMobile ? 'rotate-90 scale-[1.8] origin-center' : ''}`}>
               <div className="aspect-video w-full">
                 <img
-                  src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnBxbGJtMmRxbGJtMmRxbGJtMmRxbGJtMmRxbGJtMmRxbGJtMmRxbGJtMg/3o7btNa0RUYa5E7iiQ/giphy.gif"
+                  src="https://raw.githubusercontent.com/self-supervisor/vmax_public/main/preview.gif"
                   alt="Reinforcement Learning Trajectory Visualization"
                   className="w-full h-full object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = "https://media.giphy.com/media/3o7btNa0RUYa5E7iiQ/giphy.gif";
+                    e.currentTarget.src = "https://raw.githubusercontent.com/self-supervisor/vmax_public/main/preview.gif";
                   }}
                 />
               </div>

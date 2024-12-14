@@ -26,12 +26,7 @@ const ContactSection = () => {
               We'd love to hear from you! You can reach us at:
             </p>
             <p className="text-sm font-mono">
-              <span>{emailParts[0]}</span>
-              <span>.</span>
-              <span>{emailParts[1]}</span>
-              <span>@</span>
-              <span>{emailParts[2]}</span>
-              <span>.com</span>
+              auggy.amp [at] gmail [dot] com
             </p>
             <a
               href={`mailto:${constructEmail()}`}

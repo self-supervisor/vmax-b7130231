@@ -62,7 +62,7 @@ const Index = () => {
           <span style={{ fontFamily: "'Times New Roman', serif", fontStyle: "italic" }}>V</span>
           <sub style={{ fontFamily: "'Times New Roman', serif", fontSize: '0.7em', position: 'relative', bottom: '-0.1em', fontStyle: "italic" }}>max</sub>
         </h1>
-        <div className="relative rounded-md overflow-hidden shadow-2xl mb-6">
+        <div className="relative mb-6">
           {isLoading ? (
             <div className="w-full h-[300px] sm:h-[400px] bg-gray-200 animate-pulse" />
           ) : (

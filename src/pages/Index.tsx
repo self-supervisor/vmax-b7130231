@@ -38,7 +38,8 @@ const Index = () => {
       setIsFullscreen(!!document.fullscreenElement);
       if (!!document.fullscreenElement && isMobile) {
         try {
-          if (screen.orientation && screen.orientation.lock) {
+          if ('orientation' in screen) {
+            // @ts-ignore - TypeScript doesn't recognize screen.orientation.lock
             screen.orientation.lock('landscape').catch(() => {
               // Silently fail if orientation lock is not supported
             });
@@ -65,14 +66,14 @@ const Index = () => {
             <div className="w-full h-[300px] sm:h-[400px] bg-gray-200 animate-pulse" />
           ) : (
             <div className={`video-container relative ${isFullscreen && isMobile ? 'rotate-90 scale-[1.8] origin-center' : ''}`}>
-              <div className="aspect-video w-full">
+              <div className="aspect-[16/9] max-w-3xl mx-auto">
                 <video
                   src="https://raw.githubusercontent.com/self-supervisor/vmax_public/main/looping_actions.webm"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <Button

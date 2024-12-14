@@ -95,7 +95,7 @@ const Index = () => {
           <p className="mb-2">AI agents need more reinforcement learning. We're tackling this by:</p>
           <ol className="list-decimal space-y-2 inline-block text-center">
             <li>Automating the extraction of RL trajectories from company data</li>
-            <li>Training agents with customizable multistep reward data</li>
+            <li>Training agents with customizable multistep rewards</li>
           </ol>
           <p className="mt-4">Want agents that can work autonomously over long periods? Join our waitlist.</p>
         </div>

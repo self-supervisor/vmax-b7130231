@@ -23,14 +23,16 @@ const ContactSection = () => {
           <div className="space-y-2">
             <h3 className="font-medium">Contact Us</h3>
             <p className="text-sm text-muted-foreground">
-              We'd love to hear from you! Here's how to write our email:
+              We'd love to hear from you! You can reach us at:
             </p>
-            <div className="text-sm space-y-1">
-              <p>1. Start with "auggy"</p>
-              <p>2. Add a dot (.)</p>
-              <p>3. Add "amp"</p>
-              <p>4. Add "@gmail.com"</p>
-            </div>
+            <p className="text-sm font-mono">
+              <span>{emailParts[0]}</span>
+              <span>.</span>
+              <span>{emailParts[1]}</span>
+              <span>@</span>
+              <span>{emailParts[2]}</span>
+              <span>.com</span>
+            </p>
             <a
               href={`mailto:${constructEmail()}`}
               className="text-sm text-blue-500 hover:underline block mt-2"

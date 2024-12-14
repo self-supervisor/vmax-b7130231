@@ -92,11 +92,11 @@ const Index = () => {
         </p>
         <div className="text-sm text-gray-500 mb-8 space-y-4 max-w-2xl mx-auto text-center">
           <p className="mb-2">AI agents need more reinforcement learning. We're tackling this by:</p>
-          <ol className="list-decimal space-y-1 inline-block text-center">
+          <ol className="list-decimal space-y-1 inline-block text-left">
             <li>Automating the extraction of RL trajectories from company data</li>
-            <li>Training agents with customizable multistep rewards</li>
+            <li className="mb-0">Training agents with customizable multistep rewards</li>
           </ol>
-          <p className="mt-4">Want agents that can work autonomously over long periods? Join our waitlist.</p>
+          <p>Want agents that can work autonomously over long periods? Join our waitlist.</p>
         </div>
         <WaitlistForm />
         <ContactSection />

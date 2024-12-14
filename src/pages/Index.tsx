@@ -57,11 +57,11 @@ const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-100 to-white">
       <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-3 text-gray-900">
           <span style={{ fontFamily: "'Times New Roman', serif", fontStyle: "italic" }}>V</span>
           <sub style={{ fontFamily: "'Times New Roman', serif", fontSize: '0.7em', position: 'relative', bottom: '-0.1em', fontStyle: "italic" }}>max</sub>
         </h1>
-        <div className="relative mb-6">
+        <div className="relative">
           {isLoading ? (
             <div className="w-full h-[400px] sm:h-[600px] lg:h-[80vh] bg-gray-200 animate-pulse" />
           ) : (

@@ -57,17 +57,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-100 to-white">
-      <div className="w-full max-w-6xl px-4 sm:px-8 py-8 text-center">
+      <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
           <span style={{ fontFamily: "'Times New Roman', serif", fontStyle: "italic" }}>V</span>
           <sub style={{ fontFamily: "'Times New Roman', serif", fontSize: '0.7em', position: 'relative', bottom: '-0.1em', fontStyle: "italic" }}>max</sub>
         </h1>
         <div className="relative mb-6">
           {isLoading ? (
-            <div className="w-full h-[400px] sm:h-[600px] bg-gray-200 animate-pulse" />
+            <div className="w-full h-[400px] sm:h-[600px] lg:h-[80vh] bg-gray-200 animate-pulse" />
           ) : (
             <div className={`video-container relative ${isFullscreen && isMobile ? 'rotate-90 scale-[1.8] origin-center' : ''}`}>
-              <div className="aspect-[16/9] max-w-5xl mx-auto">
+              <div className="aspect-[16/9] max-w-[90vw] mx-auto">
                 <video
                   src="https://raw.githubusercontent.com/self-supervisor/vmax_public/main/looping_actions.webm"
                   autoPlay

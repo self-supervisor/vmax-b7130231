@@ -73,7 +73,7 @@ const Index = () => {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <Button
@@ -93,7 +93,7 @@ const Index = () => {
         <div className="text-sm text-gray-500 mb-8 space-y-4 max-w-2xl mx-auto text-center">
           <p className="mb-2">AI agents need more reinforcement learning. We're tackling this by:</p>
           <ol className="list-decimal space-y-2 inline-block text-center">
-            <li>Automating the extraction of RL trajectories from company data</li>
+            <li>Automating the extraction of RL trajectories from company</li>
             <li>Training agents with customizable multistep rewards</li>
           </ol>
           <p className="mt-4">Want agents that can work autonomously over long periods? Join our waitlist.</p>

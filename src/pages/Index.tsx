@@ -21,7 +21,7 @@ const Index = () => {
 
   const toggleFullscreen = () => {
     if (!isFullscreen) {
-      const element = document.querySelector('.gif-container');
+      const element = document.querySelector('.video-container');
       if (element?.requestFullscreen) {
         element.requestFullscreen();
       }
@@ -38,9 +38,7 @@ const Index = () => {
       setIsFullscreen(!!document.fullscreenElement);
       if (!!document.fullscreenElement && isMobile) {
         try {
-          // @ts-ignore - screen.orientation.lock is not in TypeScript's lib.dom.d.ts
           if (screen.orientation && screen.orientation.lock) {
-            // @ts-ignore
             screen.orientation.lock('landscape').catch(() => {
               // Silently fail if orientation lock is not supported
             });
@@ -66,15 +64,15 @@ const Index = () => {
           {isLoading ? (
             <div className="w-full h-[300px] sm:h-[400px] bg-gray-200 animate-pulse" />
           ) : (
-            <div className={`gif-container relative ${isFullscreen && isMobile ? 'rotate-90 scale-[1.8] origin-center' : ''}`}>
+            <div className={`video-container relative ${isFullscreen && isMobile ? 'rotate-90 scale-[1.8] origin-center' : ''}`}>
               <div className="aspect-video w-full">
-                <img
-                  src="https://raw.githubusercontent.com/self-supervisor/vmax_public/main/preview.gif"
-                  alt="Reinforcement Learning Trajectory Visualization"
+                <video
+                  src="https://raw.githubusercontent.com/self-supervisor/vmax_public/main/looping_actions.webm"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://raw.githubusercontent.com/self-supervisor/vmax_public/main/preview.gif";
-                  }}
                 />
               </div>
               <Button

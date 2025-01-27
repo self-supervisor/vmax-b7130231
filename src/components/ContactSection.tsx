@@ -11,7 +11,7 @@ const ContactSection = () => {
   };
 
   return (
-    <div className="mt-8 text-center">
+    <div className="mt-8">
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" className="gap-2 rounded-md">

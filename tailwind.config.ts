@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        sans: ['"Times New Roman"', 'serif'],
       },
       colors: {
         border: 'hsl(var(--border))',

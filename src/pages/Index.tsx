@@ -16,9 +16,9 @@ const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-100 to-white">
       <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8">
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 text-left [font-family:'Times_New_Roman',serif] !important">
-          <span className="[font-family:'Times_New_Roman',serif] italic">V</span>
-          <sub className="[font-family:'Times_New_Roman',serif] text-[0.7em] relative bottom-[-0.1em] italic">max</sub>
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 text-left">
+          <span className="italic">V</span>
+          <sub className="text-[0.7em] relative bottom-[-0.1em] italic">max</sub>
         </h1>
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">

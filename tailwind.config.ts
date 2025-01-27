@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Garamond', 'serif'],
+        sans: ['Times New Roman', 'serif'],
       },
       colors: {
         border: 'hsl(var(--border))',

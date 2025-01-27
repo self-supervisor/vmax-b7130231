@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import WaitlistForm from "@/components/WaitlistForm";
 import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
@@ -38,7 +37,6 @@ const Index = () => {
         <div className="mt-8">
           <ContactSection />
         </div>
-        <WaitlistForm />
       </div>
     </div>
   );

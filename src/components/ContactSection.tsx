@@ -1,13 +1,14 @@
+
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Mail } from "lucide-react";
 
 const ContactSection = () => {
   // Split email into parts to make it harder for bots to scrape
-  const emailParts = ['auggy', 'amp', 'gmail'];
+  const emailParts = ['augustine', 'vmax-ai'];
   
   const constructEmail = () => {
-    return `${emailParts[0]}.${emailParts[1]}@${emailParts[2]}.com`;
+    return `${emailParts[0]}@${emailParts[1]}.com`;
   };
 
   return (
@@ -26,7 +27,7 @@ const ContactSection = () => {
               We'd love to hear from you! You can reach us at:
             </p>
             <p className="text-sm font-mono">
-              auggy.amp [at] gmail [dot] com
+              augustine [at] vmax-ai [dot] com
             </p>
           </div>
         </PopoverContent>

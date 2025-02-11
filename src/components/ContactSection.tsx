@@ -20,7 +20,7 @@ const ContactSection = () => {
             Get in Touch
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="text-left rounded-md">
+        <PopoverContent align="start" className="text-left rounded-md">
           <div className="space-y-2">
             <h3 className="font-medium">Contact Us</h3>
             <p className="text-sm text-muted-foreground">

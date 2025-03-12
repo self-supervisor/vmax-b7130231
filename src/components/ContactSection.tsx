@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 
 const ContactSection = () => {
   // Split email into parts to make it harder for bots to scrape
-  const emailParts = ['augustine', 'vmax-ai'];
+  const emailParts = ['founders', 'vmax-ai'];
   
   const constructEmail = () => {
     return `${emailParts[0]}@${emailParts[1]}.com`;
@@ -27,7 +27,7 @@ const ContactSection = () => {
               We'd love to hear from you! You can reach us at:
             </p>
             <p className="text-sm font-mono">
-              augustine [at] vmax-ai [dot] com
+              founders [at] vmax-ai [dot] com
             </p>
           </div>
         </PopoverContent>

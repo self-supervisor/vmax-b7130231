@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react";
 import ContactSection from "@/components/ContactSection";
 
@@ -46,4 +44,3 @@ const Index = () => {
 };
 
 export default Index;
-

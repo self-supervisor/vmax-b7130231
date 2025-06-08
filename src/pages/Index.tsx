@@ -20,7 +20,7 @@ const Index = () => {
         <img 
           src="/lovable-uploads/8383a9b0-d8f4-4369-b18e-03473d5e90ed.png" 
           alt="Vmax" 
-          className="h-24 sm:h-32 w-auto object-contain"
+          className="h-32 sm:h-40 w-auto object-contain -ml-2"
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
@@ -42,7 +42,7 @@ const Index = () => {
             Current LLM systems trained with RL are constrained to math and coding because these are the only environments that can be simulated in a scratchpad.
           </p>
           <p className="text-gray-700">
-            $V_{max}$ is building the simulators for everything else - bridging the gap between current LLM models and general super intelligence.
+            Vmax is building the simulators for everything else - bridging the gap between current LLM models and general super intelligence.
           </p>
         </div>
         <div className="mt-8 text-left">

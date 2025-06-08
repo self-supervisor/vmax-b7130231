@@ -16,6 +16,11 @@ const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-100 to-white">
       <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8">
+        <img 
+          src="/lovable-uploads/8383a9b0-d8f4-4369-b18e-03473d5e90ed.png" 
+          alt="Vmax" 
+          className="h-16 sm:h-20 w-auto object-contain"
+        />
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 text-left">
           <span style={{ fontFamily: "'Times New Roman', serif", fontStyle: "italic" }}>V</span>
           <sub style={{ fontFamily: "'Times New Roman', serif", fontSize: '0.7em', position: 'relative', bottom: '-0.1em', fontStyle: "italic" }}>max</sub>

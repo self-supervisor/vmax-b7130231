@@ -21,10 +21,6 @@ const Index = () => {
           alt="Vmax" 
           className="h-16 sm:h-20 w-auto object-contain"
         />
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 text-left">
-          <span style={{ fontFamily: "'Times New Roman', serif", fontStyle: "italic" }}>V</span>
-          <sub style={{ fontFamily: "'Times New Roman', serif", fontSize: '0.7em', position: 'relative', bottom: '-0.1em', fontStyle: "italic" }}>max</sub>
-        </h1>
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
             Vmax is developing new ways to leverage reinforcement learning and large language models.

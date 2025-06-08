@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import ContactSection from "@/components/ContactSection";
 
@@ -33,6 +34,15 @@ const Index = () => {
           </p>
           <p className="text-gray-700">
             We are building tools to extract and utilise reasoning traces in new domains.
+          </p>
+          <p className="text-gray-700">
+            Reinforcement learning algorithms can teach neural networks to become superhuman in any task given a faithful environment and enough compute.
+          </p>
+          <p className="text-gray-700">
+            Current LLM systems trained with RL are constrained to math and coding because these are the only environments that can be simulated in a scratchpad.
+          </p>
+          <p className="text-gray-700">
+            $V_{max}$ is building the simulators for everything else - bridging the gap between current LLM models and general super intelligence.
           </p>
         </div>
         <div className="mt-8 text-left">

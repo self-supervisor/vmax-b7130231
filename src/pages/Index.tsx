@@ -24,18 +24,6 @@ const Index = () => {
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
-            Vmax is developing new ways to leverage reinforcement learning and large language models.
-          </p>
-          <p className="text-gray-700">
-            Reasoning models are superhuman in domains where there is an abundance of structured data, where there is a clear sense of what a "correct" line of reasoning entails.
-          </p>
-          <p className="text-gray-700">
-            However, most data that humans work with and produce is not so neatly structured. Reasoning can often be ambiguous, subjective, and implicit rather than explicitly defined.
-          </p>
-          <p className="text-gray-700">
-            We are building tools to extract and utilise reasoning traces in new domains.
-          </p>
-          <p className="text-gray-700">
             Reinforcement learning algorithms can teach neural networks to become superhuman in any task given a faithful environment and enough compute.
           </p>
           <p className="text-gray-700">

@@ -17,8 +17,24 @@ const Index = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-100 to-white">
       <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 text-left">
-          <span style={{ fontFamily: "'Times New Roman', serif", fontStyle: "italic" }}>V</span>
-          <sub style={{ fontFamily: "'Times New Roman', serif", fontSize: '0.7em', position: 'relative', bottom: '-0.1em', fontStyle: "italic" }}>max</sub>
+          <span style={{ 
+            fontFamily: "Computer Modern, 'Latin Modern Math', 'Times New Roman', serif", 
+            fontStyle: "normal",
+            fontWeight: "normal"
+          }}>
+            V
+          </span>
+          <sub style={{ 
+            fontFamily: "Computer Modern, 'Latin Modern Math', 'Times New Roman', serif",
+            fontSize: '0.6em', 
+            position: 'relative', 
+            bottom: '-0.25em',
+            left: '-0.05em',
+            fontStyle: "normal",
+            fontWeight: "normal"
+          }}>
+            max
+          </sub>
         </h1>
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">

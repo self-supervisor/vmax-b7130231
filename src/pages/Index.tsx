@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import ContactSection from "@/components/ContactSection";
 
@@ -24,7 +23,7 @@ const Index = () => {
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
-            Reinforcement learning algorithms can teach neural networks to become superhuman in any task given a faithful environment and enough compute.
+            Reinforcement learning algorithms can teach neural networks to become superhuman in any task given a faithful simulator.
           </p>
           <p className="text-gray-700">
             Current LLM systems trained with RL are constrained to math and coding because these are the only environments that can be simulated in a scratchpad.

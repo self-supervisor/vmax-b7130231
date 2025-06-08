@@ -24,13 +24,13 @@ const Index = () => {
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
-            Reinforcement learning algorithms can teach neural networks to become superhuman in any task given a faithful simulator.
+            Reinforcement learning algorithms can teach agents to become superhuman in any task given a faithful environment and enough compute.
           </p>
           <p className="text-gray-700">
-            Current LLM systems trained with RL are constrained to math and coding because these are the only environments that can be simulated in a scratchpad.
+            The environments we currently have for math and coding are for tasks that are short-horizon and strongly verifiable. Most tasks we want agents to do are not like this. The full dynamics of what a human agent thinks and does when approaching a problem are not captured.
           </p>
           <p className="text-gray-700">
-            Vmax is building the simulators for everything else - bridging the gap between current LLM models and general super intelligence.
+            $V_{"{max}"}$ are building RL environments for long-horizon tasks that capture and simulate the ineffable.
           </p>
         </div>
         <div className="mt-8 text-left">

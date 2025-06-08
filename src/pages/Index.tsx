@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import ContactSection from "@/components/ContactSection";
 
@@ -19,7 +20,7 @@ const Index = () => {
         <img 
           src="/lovable-uploads/8383a9b0-d8f4-4369-b18e-03473d5e90ed.png" 
           alt="Vmax" 
-          className="h-32 sm:h-40 w-auto object-contain -ml-2"
+          className="h-32 sm:h-40 w-auto object-contain -ml-6"
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">

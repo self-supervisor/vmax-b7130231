@@ -30,7 +30,7 @@ const Index = () => {
             The environments we currently have for math and coding are for tasks that are short-horizon and strongly verifiable. Most tasks we want agents to do are not like this. The full dynamics of what a human agent thinks and does when approaching a problem are not captured.
           </p>
           <p className="text-gray-700">
-            $V_{"{max}"}$ are building RL environments for long-horizon tasks that capture and simulate the ineffable.
+            V_max are building RL environments for long-horizon tasks that capture and simulate the ineffable.
           </p>
         </div>
         <div className="mt-8 text-left">

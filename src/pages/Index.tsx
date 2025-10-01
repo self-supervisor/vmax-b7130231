@@ -24,13 +24,13 @@ const Index = () => {
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
-            Vertical agent companies have unique data and domain expertise. V<sub>max</sub> transforms these assets into bespoke RL agents with a strong competitive edge.
+            Vertical agent companies have unique data and domain expertise. <em>V</em><sub>max</sub> transforms these assets into bespoke RL agents with a strong competitive edge.
           </p>
           <p className="text-gray-700">
             The result: agents and simulations that are custom to your task, continuously evolve with your business needs, and impossible for others to copy.
           </p>
           <p className="text-gray-700">
-            V<sub>max</sub> is founded by 3 RL PhDs from UCL and UPenn, backed by industry experiences in self-driving, robotics, AI infrastructure, and publications in top AI conferences such as NeurIPS, ICML, and AAAI.
+            <em>V</em><sub>max</sub> is founded by 3 RL PhDs from UCL and UPenn, backed by industry experiences in self-driving, robotics, AI infrastructure, and publications in top AI conferences such as NeurIPS, ICML, and AAAI.
           </p>
           <p className="text-gray-700 mt-4">
             <a href="https://www.linkedin.com/in/heejin-chloe-jeong/" target="_blank" rel="noopener noreferrer" className="hover:underline">Heejin</a>, <a href="https://www.linkedin.com/in/augustine-mavor-parker/" target="_blank" rel="noopener noreferrer" className="hover:underline">Augustine</a>, <a href="https://www.linkedin.com/in/matthewjsargent/" target="_blank" rel="noopener noreferrer" className="hover:underline">Matthew</a>

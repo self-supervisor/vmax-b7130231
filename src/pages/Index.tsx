@@ -24,13 +24,16 @@ const Index = () => {
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
-            Reinforcement learning algorithms can teach agents to become superhuman in any task given a faithful environment and enough compute.
+            Vertical agent companies have unique data and domain expertise. Vmax transforms these assets into bespoke RL agents with a strong competitive edge.
           </p>
           <p className="text-gray-700">
-            The environments we currently have for math and coding are short-horizon and strongly verifiable. Most tasks we want agents to do are not like this. The full dynamics of what a human agent thinks and does when approaching a problem are not captured.
+            The result: agents and simulations that are custom to your task, continuously evolve with your business needs, and impossible for others to copy.
           </p>
           <p className="text-gray-700">
-            <em>V<sub>max</sub></em> is building RL environments for long-horizon tasks that capture and simulate the ineffable.
+            Vmax is founded by 3 RL PhDs from UCL and UPenn, backed by industry experiences in self-driving, robotics, AI infrastructure, and publications in top AI conferences such as NeurIPS, ICML, and AAAI.
+          </p>
+          <p className="text-gray-700 mt-4">
+            Heejin, Augustine, Matthew
           </p>
         </div>
         <div className="mt-8 text-left">

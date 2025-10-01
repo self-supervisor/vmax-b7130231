@@ -33,7 +33,7 @@ const Index = () => {
             Vmax is founded by 3 RL PhDs from UCL and UPenn, backed by industry experiences in self-driving, robotics, AI infrastructure, and publications in top AI conferences such as NeurIPS, ICML, and AAAI.
           </p>
           <p className="text-gray-700 mt-4">
-            Heejin, Augustine, Matthew
+            <a href="https://www.linkedin.com/in/heejin-chloe-jeong/" target="_blank" rel="noopener noreferrer" className="hover:underline">Heejin</a>, <a href="https://www.linkedin.com/in/augustine-mavor-parker/" target="_blank" rel="noopener noreferrer" className="hover:underline">Augustine</a>, <a href="https://www.linkedin.com/in/matthewjsargent/" target="_blank" rel="noopener noreferrer" className="hover:underline">Matthew</a>
           </p>
         </div>
         <div className="mt-8 text-left">

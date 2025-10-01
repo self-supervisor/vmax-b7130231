@@ -18,7 +18,7 @@ const Index = () => {
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8">
         <img 
-          src="/lovable-uploads/8383a9b0-d8f4-4369-b18e-03473d5e90ed.png" 
+          src="/lovable-uploads/logo.png" 
           alt="Vmax" 
           className="h-32 sm:h-40 w-auto object-contain -ml-6"
         />

@@ -4,10 +4,10 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 
 const ContactSection = () => {
   // Split email into parts to make it harder for bots to scrape
-  const emailParts = ['founders', 'vmax-ai'];
+  const emailParts = ['founders', 'vmax.ai'];
   
   const constructEmail = () => {
-    return `${emailParts[0]}@${emailParts[1]}.com`;
+    return `${emailParts[0]}@${emailParts[1]}`;
   };
 
   return (

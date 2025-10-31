@@ -28,9 +28,6 @@ const Careers = () => {
         </Link>
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <h1 className="text-2xl font-semibold text-gray-900">Careers</h1>
-          <p className="text-gray-700">
-            Join us in building the future of reinforcement learning agents. We're looking for talented individuals who are passionate about AI and want to make an impact.
-          </p>
         </div>
         <div className="mt-8 text-left">
           <div id="grnhse_app"></div>

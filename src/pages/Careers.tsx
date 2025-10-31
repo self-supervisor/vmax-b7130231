@@ -49,8 +49,6 @@ const Careers = () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
-      // Clean up window.Grnhse to prevent errors on other pages
-      delete window.Grnhse;
     };
   }, []);
 

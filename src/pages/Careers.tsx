@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 // Declare Greenhouse types
 declare global {
   interface Window {
-    Grnhse: {
+    Grnhse?: {
       Iframe: {
         load: (jobId?: string, source?: string, ccuid?: string) => void;
       };
@@ -17,17 +17,36 @@ const Careers = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Wait for Greenhouse script to load and manually trigger iframe
+    // Load Greenhouse script only on this page
+    const script = document.createElement('script');
+    script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    
+    script.onerror = () => {
+      console.error('Failed to load Greenhouse script');
+    };
+
+    document.body.appendChild(script);
+
+    // Wait for script to load and manually trigger iframe
     const checkAndLoad = setInterval(() => {
       if (window.Grnhse && window.Grnhse.Iframe && containerRef.current) {
         clearInterval(checkAndLoad);
-        // Manually load the iframe
-        window.Grnhse.Iframe.load();
-        console.log('Greenhouse iframe manually loaded');
+        try {
+          window.Grnhse.Iframe.load();
+        } catch (error) {
+          console.error('Error loading Greenhouse iframe:', error);
+        }
       }
     }, 100);
 
-    return () => clearInterval(checkAndLoad);
+    return () => {
+      clearInterval(checkAndLoad);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
   }, []);
 
   return (

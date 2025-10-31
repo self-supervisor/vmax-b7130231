@@ -1,46 +1,31 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+interface Job {
+  id: number;
+  title: string;
+  location: { name: string };
+  absolute_url: string;
+  updated_at: string;
+}
 
 const Careers = () => {
-  const scriptLoadedRef = useRef(false);
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Prevent double-loading in development
-    if (scriptLoadedRef.current) return;
-    
-    const loadGreenhouseScript = () => {
-      const script = document.createElement('script');
-      script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
-      script.async = false; // Load synchronously to ensure proper initialization
-      script.id = 'greenhouse-jb-script';
-      
-      script.onload = () => {
-        console.log('Greenhouse script loaded successfully');
-      };
-      
-      script.onerror = () => {
-        console.error('Failed to load Greenhouse script');
-      };
-      
-      document.body.appendChild(script);
-      scriptLoadedRef.current = true;
-    };
-
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      if (!document.getElementById('greenhouse-jb-script')) {
-        loadGreenhouseScript();
-      }
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-      const script = document.getElementById('greenhouse-jb-script');
-      if (script && document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
+    fetch('https://boards-api.greenhouse.io/v1/boards/vmax/jobs')
+      .then(res => res.json())
+      .then(data => {
+        setJobs(data.jobs || []);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to load jobs:', err);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -57,7 +42,32 @@ const Careers = () => {
           <h1 className="text-2xl font-semibold text-gray-900">Careers</h1>
         </div>
         <div className="mt-8 text-left">
-          <div id="grnhse_app" className="min-h-[500px] w-full"></div>
+          {loading ? (
+            <p className="text-gray-600">Loading positions...</p>
+          ) : jobs.length === 0 ? (
+            <p className="text-gray-600">No open positions at this time.</p>
+          ) : (
+            <div className="space-y-4">
+              {jobs.map(job => (
+                <Card key={job.id} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-xl">{job.title}</CardTitle>
+                    <CardDescription>{job.location.name}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <a 
+                      href={job.absolute_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-medium"
+                    >
+                      View Position & Apply →
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
         <div className="mt-8 text-left">
           <Link to="/">

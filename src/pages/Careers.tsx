@@ -1,24 +1,33 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const Careers = () => {
-  useEffect(() => {
-    // Load Greenhouse job board script
-    const script = document.createElement('script');
-    script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
-    script.async = true;
-    script.onload = () => {
-      console.log('Greenhouse script loaded');
+// Declare Greenhouse types
+declare global {
+  interface Window {
+    Grnhse: {
+      Iframe: {
+        load: (jobId?: string, source?: string, ccuid?: string) => void;
+      };
     };
-    document.body.appendChild(script);
+  }
+}
 
-    return () => {
-      // Cleanup script on unmount
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
+const Careers = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Wait for Greenhouse script to load and manually trigger iframe
+    const checkAndLoad = setInterval(() => {
+      if (window.Grnhse && window.Grnhse.Iframe && containerRef.current) {
+        clearInterval(checkAndLoad);
+        // Manually load the iframe
+        window.Grnhse.Iframe.load();
+        console.log('Greenhouse iframe manually loaded');
       }
-    };
+    }, 100);
+
+    return () => clearInterval(checkAndLoad);
   }, []);
 
   return (
@@ -35,7 +44,7 @@ const Careers = () => {
           <h1 className="text-2xl font-semibold text-gray-900">Careers</h1>
         </div>
         <div className="mt-8 text-left">
-          <div id="grnhse_app" className="min-h-[500px] w-full"></div>
+          <div id="grnhse_app" ref={containerRef} className="min-h-[500px] w-full"></div>
         </div>
         <div className="mt-8 text-left">
           <Link to="/">

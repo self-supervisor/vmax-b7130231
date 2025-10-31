@@ -8,11 +8,16 @@ const Careers = () => {
     const script = document.createElement('script');
     script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
     script.async = true;
+    script.onload = () => {
+      console.log('Greenhouse script loaded');
+    };
     document.body.appendChild(script);
 
     return () => {
       // Cleanup script on unmount
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -30,7 +35,7 @@ const Careers = () => {
           <h1 className="text-2xl font-semibold text-gray-900">Careers</h1>
         </div>
         <div className="mt-8 text-left">
-          <div id="grnhse_app"></div>
+          <div id="grnhse_app" className="min-h-[500px] w-full"></div>
         </div>
         <div className="mt-8 text-left">
           <Link to="/">

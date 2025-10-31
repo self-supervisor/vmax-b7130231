@@ -22,30 +22,13 @@ const Careers = () => {
     if (scriptLoadedRef.current) return;
     scriptLoadedRef.current = true;
 
-    // Load Greenhouse script
+    // Load Greenhouse script - it will auto-initialize when it finds #grnhse_app
     const script = document.createElement('script');
     script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
     script.async = true;
     document.body.appendChild(script);
 
-    // Wait for script to load and manually trigger iframe
-    const checkAndLoad = setInterval(() => {
-      if (window.Grnhse && window.Grnhse.Iframe && containerRef.current) {
-        clearInterval(checkAndLoad);
-        try {
-          window.Grnhse.Iframe.load();
-        } catch (err) {
-          console.error('Greenhouse load error:', err);
-        }
-      }
-    }, 100);
-
-    // Cleanup after 10 seconds
-    const timeout = setTimeout(() => clearInterval(checkAndLoad), 10000);
-
     return () => {
-      clearInterval(checkAndLoad);
-      clearTimeout(timeout);
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }

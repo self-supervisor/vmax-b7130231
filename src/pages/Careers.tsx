@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -14,27 +13,6 @@ declare global {
 }
 
 const Careers = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scriptLoadedRef = useRef(false);
-
-  useEffect(() => {
-    // Prevent double-loading
-    if (scriptLoadedRef.current) return;
-    scriptLoadedRef.current = true;
-
-    // Load Greenhouse script - it will auto-initialize when it finds #grnhse_app
-    const script = document.createElement('script');
-    script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8">
@@ -49,7 +27,7 @@ const Careers = () => {
           <h1 className="text-2xl font-semibold text-gray-900">Careers</h1>
         </div>
         <div className="mt-8 text-left">
-          <div id="grnhse_app" ref={containerRef} className="min-h-[500px] w-full"></div>
+          <div id="grnhse_app" className="min-h-[500px] w-full"></div>
         </div>
         <div className="mt-8 text-left">
           <Link to="/">

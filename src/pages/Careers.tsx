@@ -1,25 +1,44 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Careers = () => {
+  const scriptLoadedRef = useRef(false);
+
   useEffect(() => {
-    // Load Greenhouse script only on this page
-    const script = document.createElement('script');
-    script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
-    script.async = true;
-    script.id = 'greenhouse-script';
+    // Prevent double-loading in development
+    if (scriptLoadedRef.current) return;
     
-    // Only add if not already present
-    if (!document.getElementById('greenhouse-script')) {
+    const loadGreenhouseScript = () => {
+      const script = document.createElement('script');
+      script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
+      script.async = false; // Load synchronously to ensure proper initialization
+      script.id = 'greenhouse-jb-script';
+      
+      script.onload = () => {
+        console.log('Greenhouse script loaded successfully');
+      };
+      
+      script.onerror = () => {
+        console.error('Failed to load Greenhouse script');
+      };
+      
       document.body.appendChild(script);
-    }
+      scriptLoadedRef.current = true;
+    };
+
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      if (!document.getElementById('greenhouse-jb-script')) {
+        loadGreenhouseScript();
+      }
+    }, 100);
 
     return () => {
-      // Clean up script when leaving the page
-      const existingScript = document.getElementById('greenhouse-script');
-      if (existingScript) {
-        document.body.removeChild(existingScript);
+      clearTimeout(timer);
+      const script = document.getElementById('greenhouse-jb-script');
+      if (script && document.body.contains(script)) {
+        document.body.removeChild(script);
       }
     };
   }, []);

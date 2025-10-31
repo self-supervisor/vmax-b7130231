@@ -1,18 +1,29 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-// Declare Greenhouse types
-declare global {
-  interface Window {
-    Grnhse?: {
-      Iframe: {
-        load: (jobId?: string, source?: string, ccuid?: string) => void;
-      };
-    };
-  }
-}
-
 const Careers = () => {
+  useEffect(() => {
+    // Load Greenhouse script only on this page
+    const script = document.createElement('script');
+    script.src = 'https://boards.greenhouse.io/embed/job_board/js?for=vmax';
+    script.async = true;
+    script.id = 'greenhouse-script';
+    
+    // Only add if not already present
+    if (!document.getElementById('greenhouse-script')) {
+      document.body.appendChild(script);
+    }
+
+    return () => {
+      // Clean up script when leaving the page
+      const existingScript = document.getElementById('greenhouse-script');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-full max-w-[95vw] px-4 sm:px-8 py-8">

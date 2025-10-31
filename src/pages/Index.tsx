@@ -24,7 +24,7 @@ const Index = () => {
         />
         <div className="mt-8 space-y-6 text-left max-w-[65ch]">
           <p className="text-gray-700">
-            Vertical agent companies have unique data and domain expertise. <em>V<sub>max</sub></em> transforms these assets into bespoke RL agents with a strong competitive edge.
+            Vertical agent companies have unique data and domain expertise. <em>V<sub>max</sub></em> is building the automated RL engineer that transforms these assets into bespoke RL agents with a strong competitive edge.
           </p>
           <p className="text-gray-700">
             The result: agents and simulations that are custom to your task, continuously evolve with your business needs, and impossible for others to copy.

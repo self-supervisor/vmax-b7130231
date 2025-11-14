@@ -26,9 +26,13 @@ const Index = () => {
             We refine agents on new examples of the tasks they are intended to perform.
           </p>
           <p className="text-gray-700">
-            Crucially, we are removing as much of the human element from this loop as possible. Vmax is actively
-            developing new approaches to automated environment design. We are hiring researchers with a deep expertise
-            in reinforcement learning, and a keen interest in bringing its more esoteric aspects to real applications.
+            Crucially, we are removing as much of the human element from this loop as possible.{" "}
+            <em>
+              V<sub>max</sub>
+            </em>{" "}
+            is actively developing new approaches to automated environment design. We are hiring researchers with a deep
+            expertise in reinforcement learning, and a keen interest in bringing its more esoteric aspects to real
+            applications.
           </p>
         </div>
         <div className="mt-8 text-left">
